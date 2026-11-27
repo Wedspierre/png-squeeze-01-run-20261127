@@ -1,0 +1,21 @@
+NOTICE
+
+png-squeeze-01-run-20261127 entry. The program in main.ts is built from two
+parts:
+
+1. Kit-derived parts (make.fun's own, MIT — see LICENSE): the PNG codec and
+   the screening forms/filters, taken from the competition kit
+   (png-squeeze-01-run-20261127-kit):
+     - program/generator/subject/png.mjs — PNG reader/writer (the codec the
+       checker itself decodes every answer with)
+     - program/generator/subject/scale.mjs — the forms (palette, grey,
+       grey+alpha, RGB, RGBA, tRNS key) and filter choices each image is
+       screened in, and the scale compressor
+   These were assembled into main.ts by the entry's build script
+   (build-main.mjs, kept in the work directory, not part of the entry) and
+   were not written as original work for this entry.
+
+2. Original work written for this entry: the DEFLATE encoders in main.ts —
+   the lazy optimal-parse encoder (deflateOptimal) and the full
+   dynamic-programming encoder (deflateDP) — plus the screening driver,
+   the encoder selection, and the entry loop.
